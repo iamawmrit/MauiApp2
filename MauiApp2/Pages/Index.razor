@@ -11,11 +11,19 @@
 <label><b>Collection Item:</b></label>
 <br />
 
-@foreach (Todo s in myCollection)
+@foreach (Todo td in myCollection)
 {
-    <label>@s.todoText</label>
-    <br />
-}
+    <label>@td.todoText</label>
+    if(td.IsComplected)
+    {
+        <button @onclick="()=>td.IsComplected=false">Completed</button>
+    }
+    else
+    {
+        <button @onclick="()=>td.IsComplected=true">Pending</button>
+    }
+    <br/>
+}   
 
 <br />
 <button @onclick="ClearCollection">Clear</button>
