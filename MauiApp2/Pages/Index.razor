@@ -53,6 +53,13 @@
     }
 }*@
 
-<Login />
-
-
+@code
+{
+    protected override void OnInitialized()
+    {
+        if(!AppState.IsLoggedIn)
+        {
+            NavManager.NavigateTo("/login");
+        }
+    }
+}

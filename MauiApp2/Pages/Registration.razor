@@ -1,0 +1,51 @@
+﻿@page "/registration"
+
+<h3>Registration</h3>
+
+<label>Full Name: </label>
+<input type="text" @bind=name />
+<br />
+
+<label>Email: </label>
+<input type="email" @bind=email />
+<br />
+<br />
+
+<label>Password: </label>
+<input type="password" @bind=password />
+<br />
+
+<label>Re-Password: </label>
+<input type="password" @bind=repassword />
+<br />
+<button @onclick=OnLoginClicked>Register</button>
+<br />
+<label>@logText</label>
+
+
+@code {
+
+    string name;
+    string email;
+    string password;
+    string repassword;
+    string logText;
+    private void OnLoginClicked()
+    {
+        if (password == "" || repassword == "") return;
+        if ( password == "admin" && repassword == "admin")
+        {
+            //show login success indication
+            logText = "Registered success";
+        }
+        else
+        {
+            //show login failed indication
+            logText = "Please input same password";
+
+        }
+    }
+
+
+}
+

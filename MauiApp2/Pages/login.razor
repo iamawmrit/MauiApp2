@@ -1,10 +1,16 @@
-﻿<h3>login</h3>
+﻿@page "/login"
+
+
+<h3>login</h3>
 <label>Email: </label>
 <input type="email" @bind=email/>
 <br/>
-<label>Password</label>
+<br />
+
+<label>Password: </label>
 <input type="password" @bind=password/>
 <br/>
+<br />
 <button @onclick=OnLoginClicked>Login</button>
 <br/>
 <label>@logText</label>
@@ -20,13 +26,15 @@
         if (email =="admin@gmail.com" && password =="admin")
         {
             //show login success indication
-            logText = "login success";
+            AppState.IsLoggedIn = true;
+            //logText = "login success";
+            NavManager.NavigateTo("/");
         }
         else
         {
             //show login failed indication
             logText = "invalid login details";
-
+            AppState.IsLoggedIn = false;
         }
     }
 
