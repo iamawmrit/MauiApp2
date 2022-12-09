@@ -1,13 +1,13 @@
 ﻿<h3>login</h3>
 <label>Email: </label>
-<input type="email"/>
+<input type="email" @bind=email/>
 <br/>
 <label>Password</label>
-<input type="password"/>
+<input type="password" @bind=password/>
 <br/>
-<button>Login</button>
+<button @onclick=OnLoginClicked>Login</button>
 <br/>
-<label></label>
+<label>@logText</label>
 
 
 @code {
