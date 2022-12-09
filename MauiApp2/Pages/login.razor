@@ -1,0 +1,34 @@
+﻿<h3>login</h3>
+<label>Email: </label>
+<input type="email"/>
+<br/>
+<label>Password</label>
+<input type="password"/>
+<br/>
+<button>Login</button>
+<br/>
+<label></label>
+
+
+@code {
+    string email;
+    string password;
+    string logText;
+    private void OnLoginClicked()
+    {
+        if (email == "" || password == "") return;
+        if (email =="admin@gmail.com" && password =="admin")
+        {
+            //show login success indication
+            logText = "login success";
+        }
+        else
+        {
+            //show login failed indication
+            logText = "invalid login details";
+
+        }
+    }
+
+
+}
