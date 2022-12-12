@@ -23,7 +23,8 @@
     private void OnLoginClicked()
     {
         if (email == "" || password == "") return;
-        if (email =="admin@gmail.com" && password =="admin")
+        if (email =="" && password =="")
+        //if (email =="admin@gmail.com" && password =="admin")
         {
             //show login success indication
             AppState.IsLoggedIn = true;
@@ -37,6 +38,4 @@
             AppState.IsLoggedIn = false;
         }
     }
-
-
 }
