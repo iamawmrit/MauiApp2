@@ -23,14 +23,29 @@
     private void OnLoginClicked()
     {
         if (email == "" || password == "") return;
-        if (email =="admin@gmail.com" && password =="admin")
+        //fetch all users fro file and check login details for match
+        UserSerivices.GetAllUsers();
+        foreach(User u in UserSerivices.UserCol.Users)
         {
-            //show login success indication
-            AppState.IsLoggedIn = true;
-            //logText = "login success";
-            NavManager.NavigateTo("/");
+            if (email == u.Email && password == u.Password)
+            {
+                //show login success indication
+                AppState.IsLoggedIn = true;
+                //logText = "login success";
+                NavManager.NavigateTo("/");
+                return;
+            }
         }
-        else
+        //if (email =="admin@gmail.com" && password =="admin")
+        //{
+        //    //show login success indication
+        //    AppState.IsLoggedIn = true;
+        //    //logText = "login success";
+        //    NavManager.NavigateTo("/");
+        //}
+        //else
+
+
         {
             //show login failed indication
             logText = "invalid login details";
