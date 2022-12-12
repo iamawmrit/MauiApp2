@@ -14,6 +14,8 @@ namespace MauiApp2.Data
         public string Contact { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+
+        public string Role { get; set; }
     }
     public enum Role
     {
